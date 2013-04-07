@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="ad-details-main">
+    <h2>{{ ad.title }}</h2>
+    <div class="ad-details-date">{{ ad.pub_date }}</div>
+    <div class="ad-details-message">{{ ad.message }}</div>
+    <div class="ad-details-category">{{ ad.category.name }}</div>
+</div>
+
+{% endblock %}
+

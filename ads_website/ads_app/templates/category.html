@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="category-details-main">
+    <h2>{{ category.name }}</h2>
+    <div class="category-details-ad-count">Ad count: {{ category.ad_count }}</div>
+    <div class="category-details-ads">
+        <h2>Ads in this category</h2>
+        <ul class="ad-list">
+            {% for ad in category.ad_set.all %}
+                <li>
+                    <div class="ad">
+                        <div class="ad-date">{{ ad.pub_date }}</div>
+                        <div class="ad-title"><a href="/details/{{ad.id}}">{{ ad.title }}</a></div>
+                        <div class="ad-message">{{ ad.message }}</div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+{% endblock %}
+

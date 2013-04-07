@@ -1,0 +1,89 @@
+body {
+    font-family: arial;
+    font-size: 14px;
+    margin: 0px;
+    background: url('/static/img/bg_gradient.png') #ffffff repeat-x left top;
+    background-attachment: fixed;
+}
+
+#body-content {
+    width: 980px;
+    margin-top: -12px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    background-color: white;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+#body-page-content {
+    padding: 10px;
+}
+
+.footer {
+    text-align: center;
+}
+
+#header {
+    margin: 10px auto;
+    padding: 5px;
+    padding-left: 360px;
+    height: 150px;
+    background-image: url('/static/img/logo.png');
+    background-repeat: no-repeat;
+    background-color: lightblue;
+    border-radius: 0px 0px 50px 50px;
+    border-bottom: 1px solid black;
+}
+
+#header-menu {
+    margin-top: 80px;
+    float: left;
+    border: 0px solid green;
+    padding: 2px;
+    width: 450px;
+}
+
+#header-menu ul {
+    border: 0px solid black;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+
+#header-menu li {
+    border: 1px solid gray;
+    border-right: none;
+    float: left;
+    margin: 0px;
+    background-color: rgb(200, 230, 255);
+}
+
+#header-menu li.focused {
+    background-color: white;
+}
+
+#header-menu li.first {
+    border-radius: 5px 0px 0px 5px;
+}
+
+#header-menu li.last {
+    border-right: 1px solid gray;
+    border-radius: 0px 5px 5px 0px;
+}
+
+#header-menu a {
+    display: block;
+    font-weight: bold;
+    padding: 10px 15px;
+    color: rgb(60, 60, 60);
+    text-decoration: none;
+}
+
+#header-menu a:hover {
+    color: black;
+}
+

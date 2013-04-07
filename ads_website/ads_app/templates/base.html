@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Ads</title>
+
+    <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/ads-website.js"></script>
+</head>
+<body>
+<div id="body-content">
+    <div id="header">
+        <div id="header-menu">
+            <ul>
+                <li class="first"><a href="/">Home</a></li>
+                <li><a href="/publish">Publish</a></li>
+                <li><a href="/search">Advanced search</a></li>
+                <li class="last"><a href="/about">About</a></li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            // mark the focused tab
+            docurl = window.location.href;
+            $('#header-menu a').each(function() {
+                if (this.href == docurl)
+                    $(this).parent().addClass('focused');
+            });
+        </script>
+    </div>
+
+    <div id="body-page-content">
+    {% block page_content %}{% endblock %}
+    </div>
+    
+    <hr />
+    <div class="footer">Copyright bla bla - {{ client_ip }}</div>
+</div>
+</body>
+</html>
+
