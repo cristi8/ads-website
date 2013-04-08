@@ -2,24 +2,39 @@
 
 {% block page_content %}
 
-<h1>Publish an ad</h1>
+<legend>Publish an ad</legend>
 
-<form method="POST" action="/post-ad">{% csrf_token %}
-    <div class="form-field">
-        <label for="title-field">Title</label>
-        <div class="form-field-subject">
-            <input type="text" name="title" id="title-field" maxlength="100" title="The title for this ad" />
+<div id="post-ad-form-message" class="alert" style="display:none"></div>
+
+<form id="post-ad-form" class="form-horizontal" method="POST" action="/post-ad">{% csrf_token %}
+    <div class="control-group">
+        <label class="control-label" for="category-field">Category</label>
+        <div class="controls">
+            <select class="input-xlarge" name="category" id="category-field" title="Ad category">
+                {% for category in category_list %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+            <span class="help-inline" id="category-input-message"></span>
         </div>
     </div>
-    <div class="form-field">
-        <label for="message-field">Message</label>
-        <div class="form-field-subject">
-            <textarea name="message" id="message-field" title="The ad"></textarea>
+    <div class="control-group">
+        <label class="control-label" for="title-field">Title</label>
+        <div class="controls">
+            <input class="input-xlarge" type="text" name="title" id="title-field" maxlength="100" title="The title for this ad" />
+            <span class="help-inline" id="title-input-message"></span>
+        </div>
+    </div>
+    <div class="form-field control-group">
+        <label class="control-label" for="message-field">Message</label>
+        <div class="controls">
+            <textarea class="input-xlarge" name="message" id="message-field" title="The ad" rows="4"></textarea>
+            <span class="help-inline" id="message-input-message"></span>
         </div>
     </div>
 
-    <div>
-        <button class="btn btn-large btn-primary" type="submit" /><i class="icon-ok icon-white"></i> Publish</button>
+    <div class="form-actions">
+        <button class="btn btn-large btn-primary" type="button" id="publish-ad-button" data-loading-text="Please wait..." /><i class="icon-ok icon-white"></i> Publish</button>
         , or <a href="/">Cancel</a>
     </div>
 </form>

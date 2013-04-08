@@ -103,27 +103,3 @@ body {
     text-align: center;
 }
 
-.form-field { 
-    overflow: auto; /* this "clears" the floated elements */
-    margin-bottom: 10px;
-}
-
-.form-field label {
-    float: left;
-    width: 100px;
-}
-
-.form-field .form-field-subject {
-    float: left;
-    width: 500px;
-}
-
-#title-field {
-    width: 500px;
-}
-
-#message-field {
-    width: 500px;
-    height: 100px;
-}
-

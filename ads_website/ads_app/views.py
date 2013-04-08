@@ -1,5 +1,6 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404, redirect
+from django.http import HttpResponse
 from ads_app.models import Ad
 from ads_app.models import AdCategory
 
@@ -32,8 +33,10 @@ def search(request):
 
 
 def publish(request):
-    return render_to_response('publish.html', {}, context_instance=RequestContext(request))
+    category_list = AdCategory.objects.all()
+    return render_to_response('publish.html', { 'category_list': category_list }, context_instance=RequestContext(request))
 
 def post_ad(request):
-    return redirect('/publish');
+    
+    return HttpResponse('SUCCESS 1');
 
