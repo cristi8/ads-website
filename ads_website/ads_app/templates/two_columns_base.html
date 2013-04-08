@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<div class="two-cols-wrapper">
+    <div class="column-left">
+    {% block left_column %}{% endblock %}
+    </div>
+
+    <div class="column-right">
+    {% block right_column %}{% endblock %}
+    </div>
+</div>
+
+{% endblock %}
+

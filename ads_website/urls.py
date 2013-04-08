@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     url(r'^category/(\d*)$', 'ads_website.ads_app.views.category_details'),
     
     url(r'^publish$', 'ads_website.ads_app.views.publish'),
+    url(r'^post-ad$', 'ads_website.ads_app.views.post_ad'),
+    
     url(r'^search$', 'ads_website.ads_app.views.search'),
     url(r'^about$', 'ads_website.ads_app.views.about'),
     
